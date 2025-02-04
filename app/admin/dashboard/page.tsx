@@ -90,6 +90,7 @@ export default function AdminDashboard() {
       setOrders((prev) => prev.filter((order) => order._id !== orderId));
       Swal.fire("Deleted!", "The order has been removed.", "success");
     } catch (error) {
+        console.error("Error deleting order:", error);
       Swal.fire("Error!", "Failed to delete the order.", "error");
     }
   };
@@ -115,6 +116,7 @@ export default function AdminDashboard() {
         }
         else if(newStatus === 'pending'){ Swal.fire('Order Pending!', 'The order is pending', 'success') }
     } catch (error) {
+        console.error("Error deleting order:", error);
       Swal.fire("Error!", "Failed to update status.", "error");
     }
   };
